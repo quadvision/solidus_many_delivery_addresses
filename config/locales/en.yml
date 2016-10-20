@@ -2,4 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: Hello world
+  activerecord:
+    errors:
+      models:
+        spree/line_item:
+          attributes:
+            quantity:
+              line_item_quantity_not_equal_to_line_item_addresses_quantities: "Sum (%{line_item_addresses_quantity}) does not match the informed quantity for this product"

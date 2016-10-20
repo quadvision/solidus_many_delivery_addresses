@@ -4,14 +4,12 @@ Spree::LineItem.class_eval do
 
   before_validation :mark_line_item_addresses_for_destruction
 
-  after_create :create_line_item_address
-
+  after_create :initialize_line_item_addresses
 
   private
-
-  def create_line_item_address
+  def initialize_line_item_addresses
     if self.line_item_addresses.empty?
-      self.line_item_addresses << Spree::LineItemAddress.new()
+      self.line_item_addresses << Spree::LineItemAddress.new(address: self.order.user.get_primary_address, quantity: self.quantity)
     end
   end
 
