@@ -9,5 +9,7 @@ en:
           attributes:
             quantity:
               line_item_quantity_not_equal_to_line_item_addresses_quantities: "Sum (%{line_item_addresses_quantity}) does not match the informed quantity for this product"
-              blank_for_new_address: "You must precise a quantity for a new address"
-              
+        spree/line_item_address:
+          attributes:
+            quantity:
+              cannot_be_0: "The quantity must be more than zero"
